@@ -19,29 +19,30 @@ This project analyzes the **Wisconsin Breast Cancer Diagnostic dataset** using *
 10. [Author](#author)
 
 
-  📌 Problem Statement
+
+ 📌 Problem Statement
 To identify statistical patterns and indicators of breast cancer using diagnostic measurements such as `radius`, `area`, `concavity`, and `symmetry`. The analysis focuses on separating **malignant (M)** and **benign (B)** tumors through descriptive SQL queries.
 
 
-  📌 Data Source
+📌 Data Source
 * Dataset: Wisconsin Diagnostic Breast Cancer (WDBC)
 * Source: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29)
 
 
-  📌 Tools Used
+📌 Tools Used
 * PostgreSQL
 * pgAdmin / SQL Shell (psql)
-* SQL functions: 'AVG', 'MODE', 'PERCENTILE_CONT', 'COUNT', 'CORR', etc.
+* SQL functions: `AVG`, `MODE`, `PERCENTILE_CONT`, `COUNT`, `CORR`, etc.
 
 
-  📌Data Cleaning
+📌Data Cleaning
 * Removed duplicates using `GROUP BY id_number HAVING COUNT(*) > 1`
 * Checked for missing values
 * Used `CAST` and `ROUND` to fix data types
 * Verified all columns were correctly interpreted numerically
 
 
-  📌 Exploratory Data Analysis
+📌 Exploratory Data Analysis
 Performed using SQL queries:
 * Calculated **mean, median, mode** of tumor features
 * Compared averages between **malignant** and **benign** groups
@@ -49,13 +50,12 @@ Performed using SQL queries:
 * Measured **correlation** between features (`CORR()`)
 
 
-  📌 Key Insights
-
+📌 Key Insights
 * Malignant tumors have significantly higher values in:
-  * 'area_mean', 'concavity_mean', 'perimeter_mean', etc.
-  * Strong correlation found between 'radius_se' and 'perimeter_se' (0.97)
-  * Tumors with 'area_worst > 1000' are predominantly malignant
-  * 'concave_points_mean' is a strong indicator of malignancy
+  * `area_mean`, `concavity_mean`, `perimeter_mean`, etc.
+  * Strong correlation found between `radius_se` and `perimeter_se` (0.97)
+  * Tumors with `area_worst > 1000` are predominantly malignant
+  * `concave_points_mean` is a strong indicator of malignancy
 
 📌 Business Value
 * SQL alone can uncover meaningful insights for **early cancer detection**
