@@ -14,9 +14,7 @@ This project analyzes the **Wisconsin Breast Cancer Diagnostic dataset** using *
 5. [Exploratory Data Analysis](#exploratory-data-analysis)
 6. [Key Insights](#key-insights)
 7. [Business Value](#business-value)
-8. [How to Run This Project](#how-to-run-this-project)
-9. [Files Included](#files-included)
-10. [Author](#author)
+8. [Author](#author)
 
 
 
