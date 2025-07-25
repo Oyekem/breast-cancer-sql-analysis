@@ -3,8 +3,9 @@ SQL-only analysis of Wisconsin Breast Cancer Diagnostic dataset
 Breast Cancer Diagnostic Analysis (SQL Only)
 
 📌 Overview
-This project analyzes the **Wisconsin Breast Cancer Diagnostic dataset** using **pure SQL** in PostgreSQL. It explores statistical patterns, differences between **malignant** and **benign** tumors, and discovers key diagnostic insights based on various tumor measurements.
+This project presents a structured SQL-only analysis of the Wisconsin Breast Cancer Diagnostic Dataset using PostgreSQL. The goal is to detect statistically significant patterns that distinguish malignant from benign tumors based on diagnostic measurements.
 
+The analysis demonstrates the use of descriptive statistics, correlation analysis, and outlier detection to support clinical decision-making — all through SQL without external analytics tools.
 
 📌 Table of Contents
 1. [Problem Statement](#problem-statement)
@@ -17,9 +18,11 @@ This project analyzes the **Wisconsin Breast Cancer Diagnostic dataset** using *
 8. [Author](#author)
 
 
-
 ## Problem Statement
-To identify statistical patterns and indicators of breast cancer using diagnostic measurements such as `radius`, `area`, `concavity`, and `symmetry`. The analysis focuses on separating **malignant (M)** and **benign (B)** tumors through descriptive SQL queries.
+To identify key diagnostic indicators of breast cancer by analyzing medical features such as radius, area, concavity, and symmetry. The project aims to:
+- Distinguish malignant (M) from benign (B) tumors.
+- Leverage SQL to reveal statistically meaningful patterns and predictors of malignancy.
+- Demonstrate the power of SQL in healthcare analytics and early diagnosis.
 
 
 ## Data Source
@@ -28,44 +31,52 @@ To identify statistical patterns and indicators of breast cancer using diagnosti
 
 
 ## Tools Used
-* PostgreSQL
-* pgAdmin / SQL Shell (psql)
-* SQL functions: `AVG`, `MODE`, `PERCENTILE_CONT`, `COUNT`, `CORR`, etc.
+* PostgreSQL (Database)
+* pgAdmin and SQL Shell (psql) (Query Execution)
+* SQL Functions Used:
+     * AVG(), MODE(), PERCENTILE_CONT(), ROUND()
+     * COUNT(), CAST(), CORR(), CASE, GROUP BY, HAVING
 
 
 ## Data Cleaning
-* Removed duplicates using `GROUP BY id_number HAVING COUNT(*) > 1`
-* Checked for missing values
-* Used `CAST` and `ROUND` to fix data types
-* Verified all columns were correctly interpreted numerically
+* Performed robust data preparation to ensure accurate analysis:
+    *  Removed duplicate records using GROUP BY id_number HAVING COUNT(*) > 1
+    *  Checked for and confirmed absence of missing/null values
+    *  Used CAST() and ROUND() to correct and standardize numeric data types
+    *  Verified accurate interpretation of all feature columns
 
 
 ## Exploratory Data Analysis
-Performed using SQL queries:
-* Calculated **mean, median, mode** of tumor features
-* Compared averages between **malignant** and **benign** groups
-* Discovered **outliers** using `PERCENTILE_CONT(0.9)`
-* Measured **correlation** between features (`CORR()`)
+Descriptive and comparative statistical analysis performed using SQL:
+* Calculated mean, median, mode of tumor features
+* Compared feature averages between malignant and benign tumors
+* Identified outliers using PERCENTILE_CONT(0.9)
+* Computed correlation between features using CORR()
 
 
 ## Key Insights
-* Malignant tumors have significantly higher values in:
-  * `area_mean`, `concavity_mean`, `perimeter_mean`, etc.
-  * Strong correlation found between `radius_se` and `perimeter_se` (0.97)
-  * Tumors with `area_worst > 1000` are predominantly malignant
-  * `concave_points_mean` is a strong indicator of malignancy
+* Malignant tumors showed significantly higher values in:
+     *  area_mean, perimeter_mean, concavity_mean, and concave_points_mean
+*  Strong correlation observed between:
+     *  radius_se and perimeter_se → correlation = 0.97
+* Tumors with area_worst > 1000 were predominantly malignant
+* concave_points_mean emerged as a strong and consistent predictor of malignancy
+
 
 ## Business Value
-* SQL alone can uncover meaningful insights for **early cancer detection**
-* Can help clinicians prioritize diagnostic reviews based on tumor features
-* Offers an accessible, transparent way to explore medical data without complex tooling
+* Early Detection: Enables clinicians to flag high-risk cases using key feature thresholds
+* Data-Driven Triage: Prioritize diagnostic review using statistical indicators
+* Accessibility: Proves SQL alone can deliver meaningful, explainable medical insights
+* Skill Demonstration: Reflects real-world data analyst capabilities in data wrangling, pattern discovery, and impact-driven storytelling
 
 
 Author
-
 **Tawakalt Oyeleso**
-*Data Scientist in Training, Data Storyteller*
+Data Analyst | Data Storyteller | SQL & Power BI Enthusiast
+GitHub: @Oyekem
 
 
 📎 License
 This project is for educational and portfolio use. Data source credit: UCI Machine Learning Repository.
+
+✅ Ready to collaborate remotely and deliver insights that matter.
